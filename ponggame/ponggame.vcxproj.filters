@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{520c2181-24af-4e2b-840c-9214427e2ffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{ea7d3702-68eb-473f-9f3d-ab38ec3fcac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities">
+      <UniqueIdentifier>{09cd4399-b1bf-4821-8901-3fef52903a0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\types">
+      <UniqueIdentifier>{8e8ed777-94b7-4615-8123-a0413bd86aa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\elements">
+      <UniqueIdentifier>{26de2bcc-6721-47a0-9eb7-978c60f76fec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shaderloader.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidShape.cpp">
+      <Filter>entities\types</Filter>
+    </ClCompile>
+    <ClCompile Include="UIElement.cpp">
+      <Filter>entities\types</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>entities\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="DottedLine.cpp">
+      <Filter>entities\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Pad.cpp">
+      <Filter>entities\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreBoard.cpp">
+      <Filter>entities\elements</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="solid.vertexshader">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="solid.fragmentshader">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="uielement.fragmentshader">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="uielement.vertexshader">
+      <Filter>Shaders</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shaderloader.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="controller.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidShape.h">
+      <Filter>entities\types</Filter>
+    </ClInclude>
+    <ClInclude Include="UIElement.h">
+      <Filter>entities\types</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>entities\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="DottedLine.h">
+      <Filter>entities\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Pad.h">
+      <Filter>entities\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreBoard.h">
+      <Filter>entities\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="numbershader.vertexshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="numbershader.fragmentshader">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
