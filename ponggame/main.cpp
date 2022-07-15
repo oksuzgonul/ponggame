@@ -17,11 +17,12 @@ GLFWwindow* window;
 using namespace glm;
 
 #include "shaderloader.hpp"
-#include "pad.h"
+#include "Pad.h"
 #include "Ball.h"
 #include "DottedLine.h"
 #include "ScoreBoard.h"
 
+#ifndef NDEBUG
 void APIENTRY DebugOutputCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam) {
 
 	printf("OpenGL Debug Output message : ");
@@ -46,6 +47,7 @@ void APIENTRY DebugOutputCallback(GLenum source, GLenum type, GLuint id, GLenum 
 
 	printf("Message : %s\n", message);
 }
+#endif
 
 int main()
 {
@@ -59,7 +61,10 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+#ifndef NDEBUG
 	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, 1);
+#endif
 
 	int height = 800;
 	int width = 800;
@@ -83,6 +88,7 @@ int main()
 		return -1;
 	}
 
+#ifndef NDEBUG
 	if (GLEW_ARB_debug_output) {
 		printf("The OpenGL debugger available.\n");
 		glDebugMessageCallbackARB(&DebugOutputCallback, NULL);
@@ -91,6 +97,7 @@ int main()
 	else {
 		printf("ARB_debug_output unavailable.\n");
 	}
+#endif
 
 	// Setting input mode
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
@@ -98,6 +105,8 @@ int main()
 
 	glfwPollEvents();
 	glfwSetCursorPos(window, height / 2, width / 2);
+
+	printf("%s", glGetString(GL_VERSION));
 
 	//set the view and projection matrices (set it once for all objects since it is a fixed camera)
 	// 2D orthogonal projection matrix
@@ -135,9 +144,11 @@ int main()
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 		// Render player pads and the ball
-		padRight.renderPad();
-		padLeft.renderPad();
-		ball.updateLocation();
+		updatePosition();
+
+		padRight.renderPad(getMouse());
+		padLeft.renderPad(getKey());
+		ball.updateLocation(getDeltaTime());
 
 		// Render the UI elements
 		line.drawUIElement();

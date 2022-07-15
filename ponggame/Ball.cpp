@@ -9,7 +9,7 @@ Ball::Ball() :
 Ball::Ball(glm::vec3 positionNew, glm::vec2 dimensions, glm::mat4* ProjectionW, 
 	glm::mat4* ViewW, SolidShape* pad1init, SolidShape* pad2init,
 	ScoreBoard* sb1init, ScoreBoard* sb2init) :
-	Speed(50),
+	Speed(1.0f),
 	position(positionNew),
 	SolidShape(positionNew, dimensions, ProjectionW, ViewW),
 	direction(glm::vec3(1.0f, 0.0f, 0.0f)),
@@ -20,11 +20,8 @@ Ball::Ball(glm::vec3 positionNew, glm::vec2 dimensions, glm::mat4* ProjectionW,
 {
 }
 
-void Ball::updateLocation()
+void Ball::updateLocation(float deltaTime)
 {
-	// updatePosition().z is the deltaTime calculated in controller.cpp
-	float deltaTime = updatePosition().z;
-	
 	checkCollision();
 	position += Speed * deltaTime * direction;
 

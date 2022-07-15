@@ -21,7 +21,7 @@ GLuint loadDDS(const char* path) {
 
 	fp = fopen(path, "rb");
 	if (fp == NULL) {
-		printf("Image path was not found.\n", path); getchar();
+		printf("Image path was not found.\n");
 		return 0;
 	}
 

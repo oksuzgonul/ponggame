@@ -1,6 +1,8 @@
 #ifndef CONTROLLER_HPP
 #define CONTROLLER_HPP
 
-glm::vec3 updatePosition();
-
+void updatePosition();
+float getMouse();
+float getKey();
+float getDeltaTime();
 #endif
