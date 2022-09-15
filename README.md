@@ -1,4 +1,4 @@
-Pong Remake
+## Pong Remake
 
 Made by OpenGL/GLFW and written in C++.
 
